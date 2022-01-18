@@ -28,7 +28,7 @@
         $div.css({'left':`${l}px`});
         $div.appendTo('#canvas');
         let vreme=Math.floor(Math.random()*10000)+10000;
-        $div.animate({top:1000},vreme );
+        $div.animate({top:screen.height},vreme );
         setTimeout(() =>{$div.remove();},vreme);
     }
 </script>
