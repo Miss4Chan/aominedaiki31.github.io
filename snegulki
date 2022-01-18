@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body{
+            overflow: hidden;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas" onload="snegulka()"></div>
+</body>
+<script>
+    setInterval(snegulka,1);
+    function snegulka()
+    {
+        let randomColor = Math.floor(Math.random()*16777215).toString(16);
+        let width=Math.floor(Math.random()*100)+10;
+        let height=Math.floor(Math.random()*100)+10;
+        let l=Math.floor(Math.random()*window.screen.width);
+        console.log(l)
+        let $div=$('<div>');
+        $div.css({'background-color': "#"+randomColor, 'width': width, 'height': height});
+        $div.css({'position':"absolute"});
+        $div.css({'left':`${l}px`});
+        $div.appendTo('#canvas');
+        let vreme=Math.floor(Math.random()*10000)+10000;
+        $div.animate({top:1000},vreme );
+        setTimeout(() =>{$div.remove();},vreme);
+    }
+</script>
+</html>
