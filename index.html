@@ -26,7 +26,7 @@
         $div.css({'background-color': "#"+randomColor, 'width': width, 'height': height});
         $div.css({'position':"absolute"});
         $div.css({'left':`${l}px`});
-        $div.appendTo('#canvas');
+        $div.appendTo('body');
         let vreme=Math.floor(Math.random()*10000)+10000;
         $div.animate({top:screen.height},vreme );
         setTimeout(() =>{$div.remove();},vreme);
